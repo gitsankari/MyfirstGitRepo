@@ -1,0 +1,168 @@
+<html>
+<body>
+  
+  <p id = "demo"> </p>
+  <p> Result 1: <span id="res1"></span></p>
+  <p> Result 2: <span id="res2"></span></p>
+
+<script src="https://cdn.jsdelivr.net/alasql/0.2/alasql.min.js"> </script>
+<script>
+  try{ 
+  var data = {
+  "ad_impressions": [
+{
+  "clicks": [
+    {
+      "ad_impression_guid": "wryuhksh-kjksjfkh-823y-82y348",
+      "ad_click_type": "profile",
+      "remore_ip": "98.192.139.163",
+      "forwarded_ip": "98.192.139.163",
+      "user_agent": "Mozilla/5.0",
+      "timestamp":1520620174,
+      "event_type": "ad_click",
+      "server":"835hjkhsiuyyjk" 
+    },
+    {
+      "ad_impression_guid": "wryuhksh-kjksjfkh-823y-82y348",
+      "ad_click_type": "profile",
+      "remore_ip": "98.192.139.163",
+      "forwarded_ip": "98.192.139.163",
+      "user_agent": "Mozilla/5.0",
+      "timestamp":1520620174,
+      "event_type": "ad_click",
+      "server":"835hjkhsiuyyjk" 
+    },
+    {
+       "ad_impression_guid": "wryuhksh-kjksjfkh-823y-82y348",
+      "ad_click_type": "profile",
+      "remore_ip": "98.192.139.163",
+      "forwarded_ip": "98.192.139.163",
+      "user_agent": "Mozilla/5.0",
+      "timestamp":1520620174,
+      "event_type": "ad_click",
+      "server":"835hjkhsiuyyjk" 
+    },
+    {
+      "ad_impression_guid": "wryuhksh-kjksjfkh-823y-82y348",
+      "ad_click_type": "profile",
+      "remore_ip": "98.192.139.163",
+      "forwarded_ip": "98.192.139.163",
+      "user_agent": "Mozilla/5.0",
+      "timestamp":1520620174,
+      "event_type": "ad_click",
+      "server":"835hjkhsiuyyjk" 
+    },
+    {
+    "ad_impression_guid": "wryuhksh-kjksjfkh-823y-82y348",
+      "ad_click_type": "profile",
+      "remore_ip": "98.192.139.163",
+      "forwarded_ip": "98.192.139.163",
+      "user_agent": "Mozilla/5.0",
+      "timestamp":1520620174,
+      "event_type": "ad_click",
+      "server":"835hjkhsiuyyjk" 
+    },
+    {
+       "ad_impression_guid": "wryuhksh-kjksjfkh-823y-82y348",
+      "ad_click_type": "profile",
+      "remore_ip": "98.192.139.163",
+      "forwarded_ip": "98.192.139.163",
+      "user_agent": "Mozilla/5.0",
+      "timestamp":1520620174,
+      "event_type": "ad_click",
+      "server":"835hjkhsiuyyjk" 
+    },
+    {
+     "ad_impression_guid": "wryuhksh-kjksjfkh-823y-82y348",
+      "ad_click_type": "profile",
+      "remore_ip": "98.192.139.163",
+      "forwarded_ip": "98.192.139.163",
+      "user_agent": "Mozilla/5.0",
+      "timestamp":1520620174,
+      "event_type": "ad_click",
+      "server":"835hjkhsiuyyjk" 
+    },
+    {
+       "ad_impression_guid": "wryuhksh-kjksjfkh-823y-82y348",
+      "ad_click_type": "profile",
+      "remore_ip": "98.192.139.163",
+      "forwarded_ip": "98.192.139.163",
+      "user_agent": "Mozilla/5.0",
+      "timestamp":1520620174,
+      "event_type": "ad_click",
+      "server":"835hjkhsiuyyjk" 
+    },
+    {
+      "ad_impression_guid": "wryuhksh-kjksjfkh-823y-82y348",
+      "ad_click_type": "profile",
+      "remore_ip": "98.192.139.163",
+      "forwarded_ip": "98.192.139.163",
+      "user_agent": "Mozilla/5.0",
+      "timestamp":1520620174,
+      "event_type": "ad_impression",
+      "server":"835hjkhsiuyyjk" 
+    },
+    {
+     "ad_impression_guid": "wryuhksh-kjksjfkh-823y-82y348",
+      "ad_click_type": "profile",
+      "remore_ip": "98.192.139.163",
+      "forwarded_ip": "98.192.139.163",
+      "user_agent": "Mozilla/5.0",
+      "timestamp":1520620174,
+      "event_type": "ad_impression",
+      "server":"835hjkhsiuyyjk" 
+    },
+    {
+     "ad_impression_guid": "wryuhksh-kjksjfkh-823y-82y348",
+      "ad_click_type": "profile",
+      "remore_ip": "98.192.139.163",
+      "forwarded_ip": "98.192.139.163",
+      "user_agent": "Mozilla/5.0",
+      "timestamp":1520620174,
+      "event_type": "ad_request",
+      "server":"835hjkhsiuyyjk" 
+    },
+    {
+      "ad_impression_guid": "wryuhksh-kjksjfkh-823y-82y348",
+      "ad_click_type": "profile",
+      "remore_ip": "98.192.139.163",
+      "forwarded_ip": "98.192.139.163",
+      "user_agent": "Mozilla/5.0",
+      "timestamp":1520620174,
+      "event_type": "ad_request",
+      "server":"835hjkhsiuyyjk" 
+    },
+    {
+      "ad_impression_guid": "wryuhksh-kjksjfkh-823y-82y348",
+      "ad_click_type": "profile",
+      "remore_ip": "98.192.139.163",
+      "forwarded_ip": "98.192.139.163",
+      "user_agent": "Mozilla/5.0",
+      "timestamp":1520620174,
+      "event_type": "ad_click",
+      "server":"835hjkhsiuyyjk" 
+    }
+   ]
+  }
+ ]
+};
+
+var res1 = alasql('SELECT event_type, COUNT(*) AS cnt FROM ? GROUP BY event_type',[data.ad_impressions[0].clicks]);
+
+
+document.getElementById("res1").textContent = JSON.stringify(res1);
+
+console.log(document.getElementById("res1").textContent)
+
+}
+catch (err){
+document.getElementById("demo").innerHtml = err.message;
+}
+
+</script>
+
+</body>
+</html>
+
+
+
